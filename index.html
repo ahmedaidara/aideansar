@@ -49,9 +49,11 @@
         <!-- Header -->
         <header class="mb-8 text-center">
             <div class="flex justify-center mb-4">
-                <div class="bg-blue-100 p-4 rounded-full">
-                    <i class="fas fa-question-circle text-blue-600 text-4xl"></i>
-                </div>
+                <a href="logo.png">
+                    <div class="bg-blue-100 p-4 rounded-full">
+                        <i class="fas fa-question-circle text-blue-600 text-4xl"></i>
+                    </div>
+                </a>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">FAQ - ANSAR ALMOUYASSAR</h1>
             <p class="text-gray-600 max-w-3xl mx-auto">
@@ -453,6 +455,481 @@
                     </div>
                 </div>
 
+                <!-- Projets et Métiers Category -->
+                <div class="category-content hidden" id="projets">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-project-diagram mr-3 text-blue-500"></i> Projets et Métiers
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment soumettre une demande de promotion de mon métier ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Allez à la section "Projets" et sélectionnez "Promotion".</li>
+                                    <li>Remplissez le formulaire avec vos informations : nom, date de naissance, métier, expérience, description, adresse, contact, email, besoins.</li>
+                                    <li>Soumettez le formulaire.</li>
+                                    <li>Vous recevrez un email de confirmation dans les 24 à 48 heures.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment soumettre un projet pour financement ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Allez à la section "Projets" et sélectionnez "Financement".</li>
+                                    <li>Remplissez le formulaire avec les détails du projet : nom, date de naissance, titre, description, budget, délai, besoins.</li>
+                                    <li>Soumettez le formulaire.</li>
+                                    <li>L'association vous contactera dans un délai de 3 à 5 jours.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi n'ai-je pas reçu d'email de confirmation ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Vérifiez votre dossier de spam ou courriers indésirables.</li>
+                                    <li>Assurez-vous que l'email saisi dans le formulaire est correct.</li>
+                                    <li>Si le problème persiste, contactez l'administrateur via la section "Contact".</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment voir les métiers ou projets disponibles ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Sur la page d'accueil, la section "Métiers et Projets" affiche une liste de cartes.</li>
+                                    <li>Cliquez sur "En savoir plus" pour voir les détails (nom, expérience, budget, description, etc.).</li>
+                                    <li>Les membres connectés peuvent également consulter ces informations dans leur espace personnel.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Espace Administratif Category -->
+                <div class="category-content hidden" id="admin">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-user-shield mr-3 text-blue-500"></i> Espace Administratif
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment accéder aux espaces réservés (admin, trésorier, secrétaire, président) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Allez à la section "Chatbot" ou "Accès sécurisé" sur la page d'accueil.</li>
+                                    <li>Entrez le code d'accès correspondant à votre rôle (fourni par le président ou l'administrateur).</li>
+                                    <li>Si le code est correct, vous serez redirigé vers l'espace correspondant.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Quelles sont les responsabilités des différents rôles ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <div class="space-y-3">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Admin :</h4>
+                                        <p class="ml-2">Ajoute, modifie ou supprime des membres et gère les événements.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Trésorier :</h4>
+                                        <p class="ml-2">Gère les cotisations (mensuelles et globales) et consulte les statistiques via des graphiques.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Secrétaire :</h4>
+                                        <p class="ml-2">Gère les affiches, livres, messages motivationnels, et la bibliothèque.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Président :</h4>
+                                        <p class="ml-2">Accède à toutes les fonctionnalités, modifie les codes d'accès, et supervise les projets/métiers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment changer les codes d'accès (président uniquement) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Connectez-vous à l'espace président.</li>
+                                    <li>Allez à la section "Gestion des codes".</li>
+                                    <li>Entrez un nouveau code (minimum 6 caractères) pour le rôle souhaité (admin, trésorier, secrétaire, président).</li>
+                                    <li>Cliquez sur "Enregistrer". Le nouveau code sera immédiatement actif.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi mon code d'accès ne fonctionne-t-il pas ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Vérifiez que le code est correct (sensible à la casse).</li>
+                                    <li>Assurez-vous d'utiliser le code correspondant à votre rôle.</li>
+                                    <li>Si le problème persiste, contactez le président pour vérifier ou réinitialiser le code.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fichiers et Bibliothèque Category -->
+                <div class="category-content hidden" id="fichiers">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-file-alt mr-3 text-blue-500"></i> Fichiers et Bibliothèque
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment ajouter une affiche ou un livre (secrétaire) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Connectez-vous à l'espace secrétaire.</li>
+                                    <li>Allez à l'onglet "Affiches" ou "Livres".</li>
+                                    <li>Pour une affiche :
+                                        <ul class="list-disc pl-5 mt-1">
+                                            <li>Remplissez le formulaire avec le nom, la catégorie, et l'URL de l'image (jpg, png, gif).</li>
+                                            <li>Soumettez le formulaire. L'affiche apparaîtra dans la galerie de la page d'accueil.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Pour un livre :
+                                        <ul class="list-disc pl-5 mt-1">
+                                            <li>Remplissez le formulaire avec le titre, la catégorie, l'URL de la couverture (jpg, png, gif), et l'URL du PDF (fichier .pdf ou lien Google Drive/Dropbox).</li>
+                                            <li>Soumettez le formulaire. Le livre sera ajouté à la bibliothèque.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment supprimer une affiche ou un livre (secrétaire) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Dans l'espace secrétaire, allez à l'onglet "Affiches" ou "Livres".</li>
+                                    <li>Consultez la liste des fichiers ou livres.</li>
+                                    <li>Cliquez sur "Supprimer" à côté de l'élément souhaité et confirmez.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment accéder à la bibliothèque ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Allez à la section "Bibliothèque" sur la page d'accueil.</li>
+                                    <li>Utilisez la barre de recherche pour filtrer les livres par titre ou catégorie.</li>
+                                    <li>Cliquez sur la couverture d'un livre pour télécharger le PDF.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi l'URL d'un livre ou d'une affiche ne fonctionne-t-elle pas ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Vérifiez que l'URL est valide (jpg, png, gif pour les images ; .pdf ou lien Google Drive/Dropbox pour les livres).</li>
+                                    <li>Si vous utilisez Google Drive ou Dropbox, assurez-vous que le lien est configuré pour un accès public.</li>
+                                    <li>Contactez le secrétaire si l'erreur persiste.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Motivationnels Category -->
+                <div class="category-content hidden" id="messages">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-comment-dots mr-3 text-blue-500"></i> Messages Motivationnels
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment voir les messages motivationnels ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Sur la page d'accueil, le dernier message motivationnel s'affiche dans la section "Motivation".</li>
+                                    <li>Dans l'espace personnel, vous pouvez consulter l'historique des messages.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment envoyer un message motivationnel (secrétaire) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Connectez-vous à l'espace secrétaire.</li>
+                                    <li>Allez à l'onglet "Messages".</li>
+                                    <li>Entrez le texte du message et cliquez sur "Envoyer".</li>
+                                    <li>Le message apparaîtra immédiatement sur la page d'accueil et dans l'historique.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment supprimer un message motivationnel (secrétaire) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Dans l'espace secrétaire, allez à l'onglet "Messages".</li>
+                                    <li>Consultez l'historique des messages.</li>
+                                    <li>Cliquez sur "Supprimer" à côté du message souhaité et confirmez.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coran Category -->
+                <div class="category-content hidden" id="coran">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-book-quran mr-3 text-blue-500"></i> Coran
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment consulter les Juz du Coran ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Allez à la section "Coran" sur la page d'accueil.</li>
+                                    <li>Les 30 Juz sont listés. Utilisez la barre de recherche pour filtrer par numéro de Juz (par exemple, "Juz 1").</li>
+                                    <li>Cliquez sur un Juz pour voir son contenu (si disponible).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi certains Juz ne s'affichent-ils pas ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Si la liste est vide ou filtrée, vérifiez votre recherche (par exemple, supprimez les termes de recherche).</li>
+                                    <li>Contactez l'administrateur si le contenu ne se charge pas correctement.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques Category -->
+                <div class="category-content hidden" id="statistiques">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-chart-bar mr-3 text-blue-500"></i> Statistiques
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment consulter les statistiques des cotisations ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Connectez-vous à l'espace trésorier.</li>
+                                    <li>Allez à l'onglet "Statistiques".</li>
+                                    <li>Choisissez le type de cotisation :
+                                        <ul class="list-disc pl-5 mt-1">
+                                            <li>Mensuelle : Sélectionnez un mois et une année pour voir le nombre de membres ayant payé ou non.</li>
+                                            <li>Globale : Sélectionnez une cotisation globale (par exemple, "Cotisation annuelle") pour voir son statut.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Un graphique (barres) affiche les données.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi le graphique des statistiques ne s'affiche-t-il pas ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Vérifiez que vous êtes connecté en tant que trésorier.</li>
+                                    <li>Assurez-vous que des données de cotisations existent dans la base de données.</li>
+                                    <li>Essayez de changer le type de cotisation ou les filtres (mois/année).</li>
+                                    <li>Si le problème persiste, contactez l'administrateur.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problèmes Techniques Category -->
+                <div class="category-content hidden" id="technique">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-tools mr-3 text-blue-500"></i> Problèmes Techniques
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi une section ne s'affiche-t-elle pas ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Assurez-vous d'être connecté avec le bon rôle (membre, admin, trésorier, etc.).</li>
+                                    <li>Vérifiez que votre navigateur est à jour (Chrome, Firefox, Safari recommandés).</li>
+                                    <li>Essayez de vider le cache de votre navigateur ou d'utiliser un autre appareil.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Que signifie l'erreur "Conteneur introuvable" ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Cette erreur indique qu'une partie de l'interface n'a pas été correctement chargée.</li>
+                                    <li>Rafraîchissez la page (F5 ou bouton de rafraîchissement).</li>
+                                    <li>Déconnectez-vous et reconnectez-vous.</li>
+                                    <li>Si l'erreur persiste, contactez l'administrateur.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi certaines fonctionnalités sont-elles lentes ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Une connexion Internet instable peut ralentir le chargement des données.</li>
+                                    <li>Si vous chargez de grandes quantités de données (par exemple, liste des membres ou fichiers), cela peut prendre du temps.</li>
+                                    <li>Contactez l'administrateur pour optimiser la base de données.</li>
+                                    <li>Essayez d'utiliser un appareil avec un navigateur plus rapide.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sécurité Category -->
+                <div class="category-content hidden" id="securite">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-lock mr-3 text-blue-500"></i> Sécurité
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Mes données sont-elles sécurisées ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Oui, l'application utilise Firebase pour stocker les données de manière sécurisée.</li>
+                                    <li>Les connexions des membres sont anonymisées, et les codes d'accès sont stockés dans une base protégée.</li>
+                                    <li>Ne partagez jamais votre code de membre ou vos codes d'accès avec d'autres personnes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Que faire si je pense que mon compte a été compromis ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Contactez immédiatement l'administrateur via la section "Contact" ou par email.</li>
+                                    <li>Demandez une réinitialisation de votre code de membre ou de votre date de naissance.</li>
+                                    <li>Fournissez une preuve d'identité pour sécuriser le processus.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Contact Category -->
                 <div class="category-content hidden" id="contact">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
@@ -500,6 +977,58 @@
                                         <p class="ml-2">Contactez l'administrateur via la section "Contact".</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divers Category -->
+                <div class="category-content hidden" id="divers">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-ellipsis-h mr-3 text-blue-500"></i> Divers
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment activer le mode sombre ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Allez à la section "Paramètres" (si disponible) ou cherchez l'icône de thème (soleil/lune) dans l'interface.</li>
+                                    <li>Activez le mode sombre. Il sera enregistré pour vos prochaines sessions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">L'application est-elle disponible sur mobile ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Oui, l'application est accessible via un navigateur mobile (Chrome, Safari, etc.).</li>
+                                    <li>Aucune application native n'est nécessaire, mais assurez-vous d'avoir une connexion Internet stable.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Puis-je recevoir des notifications ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Si votre navigateur prend en charge les notifications (et que vous avez autorisé les notifications pour le site), vous recevrez des alertes pour les nouveaux messages ou événements.</li>
+                                    <li>Pour activer les notifications, acceptez la demande de permission lors de votre première visite.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
