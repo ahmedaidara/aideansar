@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ANSAR ALMOUYASSAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-category {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .active-category:hover {
+            background-color: #2563eb;
+        }
+        .question-item:hover {
+            background-color: #f3f4f6;
+        }
+        .answer-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .answer-content.show {
+            max-height: 1000px;
+        }
+        .search-highlight {
+            background-color: #fef08a;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8 text-center">
+            <div class="flex justify-center mb-4">
+                <div class="bg-blue-100 p-4 rounded-full">
+                    <i class="fas fa-question-circle text-blue-600 text-4xl"></i>
+                </div>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">FAQ - ANSAR ALMOUYASSAR</h1>
+            <p class="text-gray-600 max-w-3xl mx-auto">
+                Cette FAQ répond aux questions les plus fréquentes sur l'utilisation de l'application ANSAR ALMOUYASSAR. 
+                Si vous ne trouvez pas de réponse à votre question, contactez l'administrateur via la section "Contact" de l'application.
+            </p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="mb-8 relative">
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Rechercher dans la FAQ..." 
+                    class="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition duration-200">
+                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <div id="searchResults" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-96 overflow-y-auto"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Categories Sidebar -->
+            <div class="lg:w-1/4">
+                <div class="bg-white rounded-lg shadow-md p-4 sticky top-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Catégories</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition active-category" data-category="general">
+                                <i class="fas fa-info-circle mr-2"></i> Général
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="connexion">
+                                <i class="fas fa-sign-in-alt mr-2"></i> Connexion
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="cotisations">
+                                <i class="fas fa-money-bill-wave mr-2"></i> Cotisations
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="evenements">
+                                <i class="fas fa-calendar-alt mr-2"></i> Événements
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="projets">
+                                <i class="fas fa-project-diagram mr-2"></i> Projets et Métiers
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="admin">
+                                <i class="fas fa-user-shield mr-2"></i> Espace Administratif
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="fichiers">
+                                <i class="fas fa-file-alt mr-2"></i> Fichiers et Bibliothèque
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="messages">
+                                <i class="fas fa-comment-dots mr-2"></i> Messages Motivationnels
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="coran">
+                                <i class="fas fa-book-quran mr-2"></i> Coran
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="statistiques">
+                                <i class="fas fa-chart-bar mr-2"></i> Statistiques
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="technique">
+                                <i class="fas fa-tools mr-2"></i> Problèmes Techniques
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="securite">
+                                <i class="fas fa-lock mr-2"></i> Sécurité
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="contact">
+                                <i class="fas fa-envelope mr-2"></i> Contact
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-btn w-full text-left px-4 py-2 rounded-lg hover:bg-blue-100 transition" data-category="divers">
+                                <i class="fas fa-ellipsis-h mr-2"></i> Divers
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Questions Content -->
+            <div class="lg:w-3/4">
+                <!-- General Category -->
+                <div class="category-content" id="general">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-info-circle mr-3 text-blue-500"></i> Général
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Qu'est-ce que l'application ANSAR ALMOUYASSAR ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <p>L'application ANSAR ALMOUYASSAR est une plateforme web qui facilite la gestion de l'association. Elle permet :</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Aux membres de consulter leurs informations</li>
+                                    <li>Aux administrateurs de gérer les données</li>
+                                    <li>Aux responsables (trésorier, secrétaire, président) d'effectuer des tâches spécifiques comme la gestion des cotisations, des fichiers, ou des projets.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment accéder à l'application ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Accédez à l'application via un navigateur web (Chrome, Firefox, Safari recommandés) sur un ordinateur ou un appareil mobile.</li>
+                                    <li>Utilisez l'URL officielle fournie par l'association.</li>
+                                    <li>Aucune installation n'est requise, mais une connexion Internet est nécessaire.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Qui peut utiliser l'application ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Membres :</h4>
+                                        <p class="ml-2">Accès à l'espace personnel avec leur code de membre et date de naissance.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Administrateurs :</h4>
+                                        <p class="ml-2">Gestion des membres et événements avec un code d'accès spécifique.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Trésoriers :</h4>
+                                        <p class="ml-2">Gestion des cotisations et statistiques avec un code d'accès.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Secrétaires :</h4>
+                                        <p class="ml-2">Gestion des fichiers, messages motivationnels, et bibliothèque avec un code d'accès.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Président :</h4>
+                                        <p class="ml-2">Accès complet à toutes les fonctionnalités avec un code d'accès.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment puis-je signaler un problème ou suggérer une amélioration ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Utilisez la section "Contact" dans l'application pour envoyer un message à l'administrateur.</li>
+                                    <li>Vous pouvez également contacter l'association par email ou téléphone (coordonnées disponibles auprès des responsables).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connexion Category -->
+                <div class="category-content hidden" id="connexion">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-sign-in-alt mr-3 text-blue-500"></i> Connexion et Espace Personnel
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment me connecter à mon espace personnel ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Sur la page d'accueil, allez à la section "Espace Personnel".</li>
+                                    <li>Entrez votre code de membre (fourni par l'association) et votre date de naissance (format JJ/MM/AAAA, par exemple 15/03/1990).</li>
+                                    <li>Cliquez sur "Connexion".</li>
+                                    <li>Vous accéderez à vos informations personnelles, cotisations, et événements.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Que puis-je faire dans mon espace personnel ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <p>Vous pouvez :</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Consulter vos informations (nom, code, statut, email, téléphone, etc.).</li>
+                                    <li>Vérifier vos cotisations mensuelles et globales (payées ou non).</li>
+                                    <li>Effectuer des paiements via Wave ou Orange Money (si activé).</li>
+                                    <li>Voir les événements à venir et les messages motivationnels.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">J'ai oublié mon code de membre, que faire ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Contactez l'administrateur ou le secrétaire via la section "Contact" ou par email.</li>
+                                    <li>Fournissez votre nom complet et, si possible, votre date de naissance pour vérification.</li>
+                                    <li>L'administrateur vous renverra votre code après confirmation de votre identité.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi ma connexion échoue-t-elle ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Vérifiez que votre code de membre est correct (sensible à la casse).</li>
+                                    <li>Assurez-vous que la date de naissance est au format JJ/MM/AAAA.</li>
+                                    <li>Si le problème persiste, contactez l'administrateur pour vérifier vos informations dans la base de données.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment changer ma date de naissance (mot de passe) ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Contactez l'administrateur via la section "Contact".</li>
+                                    <li>Fournissez une preuve d'identité (par exemple, une copie de votre carte d'identité).</li>
+                                    <li>L'administrateur mettra à jour votre date de naissance dans la base de données.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cotisations Category -->
+                <div class="category-content hidden" id="cotisations">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-money-bill-wave mr-3 text-blue-500"></i> Cotisations
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment vérifier mes cotisations ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Connectez-vous à votre espace personnel.</li>
+                                    <li>Allez à l'onglet "Cotisations".</li>
+                                    <li>Pour les cotisations mensuelles, les mois payés sont marqués par une coche.</li>
+                                    <li>Pour les cotisations globales, le statut (payé/non payé) est affiché.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment payer une cotisation ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>Dans l'espace personnel, sélectionnez l'option de paiement (Wave ou Orange Money).</li>
+                                    <li>Pour Wave, cliquez sur le lien fourni pour effectuer le paiement.</li>
+                                    <li>Pour Orange Money, suivez les instructions affichées (peut nécessiter l'application Orange Money).</li>
+                                    <li>Une fois le paiement confirmé, le trésorier mettra à jour votre statut (délai de 24 à 48 heures).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Que se passe-t-il si je ne paie pas mes cotisations ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Votre statut peut passe à "inactif", ce qui limite votre accès à certains événements ou services.</li>
+                                    <li>Contactez le trésorier via l'application pour discuter d'éventuelles options (échelonnement, report, etc.).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi mes cotisations ne sont-elles pas à jour après paiement ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>La mise à jour peut prendre 24 à 48 heures après confirmation du paiement.</li>
+                                    <li>Vérifiez que vous avez utilisé le bon lien de paiement (Wave ou Orange Money).</li>
+                                    <li>Si le problème persiste, contactez le trésorier avec une preuve de paiement.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evenements Category -->
+                <div class="category-content hidden" id="evenements">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-calendar-alt mr-3 text-blue-500"></i> Événements
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment voir les événements à venir ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Sur la page d'accueil, la section "Événements" affiche les événements avec un compte à rebours.</li>
+                                    <li>Dans votre espace personnel, vous verrez les détails des événements auxquels vous êtes inscrit.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment m'inscrire à un événement ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Certains événements sont ouverts à tous les membres actifs, d'autres nécessitent une inscription.</li>
+                                    <li>Contactez l'administrateur via la section "Contact" ou par email pour vous inscrire.</li>
+                                    <li>Vous recevrez une confirmation une fois votre inscription validée.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Pourquoi un événement affiche-t-il "Date à confirmer" ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <p>Cela indique que la date de l'événement n'est pas valide ou n'a pas été correctement enregistrée. Contactez l'administrateur pour obtenir des informations actualisées.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Category -->
+                <div class="category-content hidden" id="contact">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-envelope mr-3 text-blue-500"></i> Contact
+                    </h2>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Comment contacter l'association ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Utilisez la section "Contact" dans l'application pour envoyer un message.</li>
+                                    <li>Envoyez un email à l'adresse officielle de l'association (fournie par les responsables).</li>
+                                    <li>Appelez le numéro de contact de l'association (disponible auprès des administrateurs).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="question-item p-5 border-b border-gray-200 cursor-pointer flex justify-between items-center">
+                            <h3 class="font-semibold text-gray-800">Qui puis-je contacter pour des questions spécifiques ?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                        <div class="answer-content px-5">
+                            <div class="py-4 text-gray-700">
+                                <div class="space-y-3">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Questions sur les cotisations :</h4>
+                                        <p class="ml-2">Contactez le trésorier.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Questions sur les fichiers/livres/messages :</h4>
+                                        <p class="ml-2">Contactez le secrétaire.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Questions sur les codes d'accès ou l'administration :</h4>
+                                        <p class="ml-2">Contactez le président.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Problèmes techniques :</h4>
+                                        <p class="ml-2">Contactez l'administrateur via la section "Contact".</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="noResults" class="hidden text-center py-10">
+                    <i class="fas fa-search text-gray-400 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Aucun résultat trouvé</h3>
+                    <p class="text-gray-500">Essayez avec d'autres termes de recherche ou parcourez les catégories.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-600 border-t border-gray-200 pt-8">
+            <p>© 2023 ANSAR ALMOUYASSAR. Tous droits réservés.</p>
+            <p class="mt-2">Merci d'utiliser notre application !</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category switching
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const categoryContents = document.querySelectorAll('.category-content');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active-category'));
+                    this.classList.add('active-category');
+                    
+                    // Show selected category content
+                    categoryContents.forEach(content => {
+                        content.classList.add('hidden');
+                        if (content.id === category) {
+                            content.classList.remove('hidden');
+                        }
+                    });
+                    
+                    // Hide no results message if showing
+                    document.getElementById('noResults').classList.add('hidden');
+                });
+            });
+
+            // Accordion functionality for questions
+            const questionItems = document.querySelectorAll('.question-item');
+            
+            questionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle answer visibility
+                    answer.classList.toggle('show');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('show')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const noResults = document.getElementById('noResults');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                if (searchTerm.length < 2) {
+                    searchResults.classList.add('hidden');
+                    return;
+                }
+                
+                // Hide all category contents and show no results by default
+                categoryContents.forEach(content => content.classList.add('hidden'));
+                noResults.classList.remove('hidden');
+                
+                // Collect all questions and answers
+                const allQuestions = document.querySelectorAll('.question-item h3');
+                const allAnswers = document.querySelectorAll('.answer-content');
+                
+                let hasResults = false;
+                let resultsHTML = '';
+                
+                allQuestions.forEach((question, index) => {
+                    const questionText = question.textContent.toLowerCase();
+                    const answer = allAnswers[index];
+                    const answerText = answer.textContent.toLowerCase();
+                    
+                    if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                        hasResults = true;
+                        
+                        // Highlight matching text in question
+                        const highlightedQuestion = highlightText(question.textContent, searchTerm);
+                        
+                        // Get the category name
+                        const category = question.closest('.category-content').id;
+                        const categoryName = getCategoryName(category);
+                        
+                        resultsHTML += `
+                            <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer" 
+                                 onclick="scrollToQuestion('${category}', ${index})">
+                                <div class="text-xs text-blue-500 mb-1">${categoryName}</div>
+                                <div class="font-medium">${highlightedQuestion}</div>
+                                <div class="text-sm text-gray-500 mt-1 truncate">${answerText.substring(0, 100)}...</div>
+                            </div>
+                        `;
+                    }
+                });
+                
+                if (hasResults) {
+                    noResults.classList.add('hidden');
+                    searchResults.innerHTML = resultsHTML;
+                    searchResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.remove('hidden');
+                    searchResults.classList.add('hidden');
+                }
+            });
+            
+            // Close search results when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Helper function to highlight search terms
+        function highlightText(text, term) {
+            if (!term) return text;
+            
+            const regex = new RegExp(term, 'gi');
+            return text.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+        }
+        
+        // Helper function to get category name from ID
+        function getCategoryName(categoryId) {
+            const categoryNames = {
+                'general': 'Général',
+                'connexion': 'Connexion',
+                'cotisations': 'Cotisations',
+                'evenements': 'Événements',
+                'projets': 'Projets et Métiers',
+                'admin': 'Espace Administratif',
+                'fichiers': 'Fichiers et Bibliothèque',
+                'messages': 'Messages Motivationnels',
+                'coran': 'Coran',
+                'statistiques': 'Statistiques',
+                'technique': 'Problèmes Techniques',
+                'securite': 'Sécurité',
+                'contact': 'Contact',
+                'divers': 'Divers'
+            };
+            
+            return categoryNames[categoryId] || categoryId;
+        }
+        
+        // Function to scroll to a specific question (used in search results)
+        function scrollToQuestion(categoryId, questionIndex) {
+            // Show the category
+            document.querySelectorAll('.category-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(categoryId).classList.remove('hidden');
+            
+            // Update active category button
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active-category'));
+            document.querySelector(`.category-btn[data-category="${categoryId}"]`).classList.add('active-category');
+            
+            // Get the question element
+            const questions = document.querySelectorAll(`#${categoryId} .question-item`);
+            const question = questions[questionIndex];
+            
+            // Expand the answer if not already expanded
+            const answer = question.nextElementSibling;
+            if (!answer.classList.contains('show')) {
+                question.click();
+            }
+            
+            // Scroll to the question
+            question.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Hide search results
+            document.getElementById('searchResults').classList.add('hidden');
+            document.getElementById('searchInput').value = '';
+        }
+    </script>
+</body>
+</html>
